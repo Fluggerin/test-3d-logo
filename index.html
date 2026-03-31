@@ -3,28 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vextrys 3D Preview</title>
+    <title>Vextrys 3D Viewer</title>
     <style>
-        body {
-            margin: 0;
-            background-color: #ffffff;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            overflow: hidden;
-            font-family: sans-serif;
+        /* Сбрасываем лишние отступы */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body { 
+            background-color: #ffffff; /* Белый фон */
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            width: 100vw;
+            overflow: hidden; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
+
+        /* Настройки самого 3D окна */
         model-viewer {
             width: 100%;
             height: 100%;
-            background-color: #ffffff;
+            display: block;
+            --poster-color: transparent;
         }
-        .controls-hint {
+
+        /* Подсказка для телефона снизу */
+        .hint {
             position: absolute;
-            bottom: 20px;
-            color: #888;
-            font-size: 12px;
+            bottom: 30px;
+            color: #aaa;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             pointer-events: none;
         }
     </style>
@@ -32,22 +42,21 @@
 </head>
 <body>
 
-    <model-viewer
-        src="vextrys_logo.glb"
+    <model-viewer 
+        src="vextrys_logo.glb" 
         alt="Vextrys 3D Logo"
-        ar
-        ar-modes="webxr scene-viewer quick-look"
-        camera-controls
-        auto-rotate
-        interaction-prompt="auto"
-        shadow-intensity="1"
+        camera-controls 
+        auto-rotate 
+        rotation-per-second="40deg"
+        powerPreference="high-performance"
+        interaction-prompt="none"
         exposure="1"
+        shadow-intensity="0"
         camera-orbit="0deg 75deg 105%"
         min-camera-orbit="auto auto 5%"
-        max-camera-orbit="auto auto auto"
         touch-action="pan-y">
-
-        <div class="controls-hint">Крути пальцем • Зуми щипком</div>
+        
+        <div class="hint">Крути • Приближай</div>
     </model-viewer>
 
 </body>
