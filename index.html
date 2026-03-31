@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vextrys 3D Viewer</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: #ffffff; 
-            display: flex; 
-            justify-content: center; 
-            align-items: center; 
-            height: 100vh; 
-            width: 100vw;
-            overflow: hidden; 
-        }
-        model-viewer {
-            width: 100%;
-            height: 100%;
-            background-color: #ffffff;
-            --poster-color: transparent;
-        }
+        body { margin: 0; background-color: #ffffff; height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; }
+        model-viewer { width: 100%; height: 100%; }
     </style>
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
 </head>
@@ -28,18 +13,15 @@
 
     <model-viewer 
         src="vextrys_logo.glb" 
-        alt="Vextrys 3D Logo"
         camera-controls 
-        auto-rotate 
-        ar
-        shadow-intensity="0"
-        exposure="1"
-        camera-orbit="auto auto auto" 
+        auto-rotate
+        bounds="tight" 
+        auto-rotate-delay="0"
+        exposure="1.5"
+        camera-orbit="auto auto auto"
         min-camera-orbit="auto auto auto"
         max-camera-orbit="auto auto auto"
-        bounds="tight"
-        interaction-prompt="none"
-        touch-action="pan-y">
+        style="background-color: #ffffff;">
     </model-viewer>
 
 </body>
