@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vextrys 3D Preview</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+        model-viewer {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+        }
+        .controls-hint {
+            position: absolute;
+            bottom: 20px;
+            color: #888;
+            font-size: 12px;
+            pointer-events: none;
+        }
+    </style>
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.4.0/model-viewer.min.js"></script>
+</head>
+<body>
+
+    <model-viewer
+        src="vextrys_logo.glb"
+        alt="Vextrys 3D Logo"
+        ar
+        ar-modes="webxr scene-viewer quick-look"
+        camera-controls
+        auto-rotate
+        interaction-prompt="auto"
+        shadow-intensity="1"
+        exposure="1"
+        camera-orbit="0deg 75deg 105%"
+        min-camera-orbit="auto auto 5%"
+        max-camera-orbit="auto auto auto"
+        touch-action="pan-y">
+
+        <div class="controls-hint">Крути пальцем • Зуми щипком</div>
+    </model-viewer>
+
+</body>
+</html>
